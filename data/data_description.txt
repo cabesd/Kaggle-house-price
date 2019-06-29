@@ -62,6 +62,7 @@ Street: Type of road access to property
        	
 Alley: Type of alley access to property
 
+
        Grvl	Gravel
        Pave	Paved
        NA 	No alley access

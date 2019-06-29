@@ -214,7 +214,7 @@ def print_weak_correlations(df: pd.DataFrame, col_to_correlate: str, moderate_va
         if abs(corr_value) < moderate_value and col != col_to_correlate:
             print(col, ': ', corr_value)
 
-def remove_weak_correlations(df1: pd.DataFrame, df2, y, weak_threshold: float = 0.1) -> (pd.DataFrame, pd.DataFrame):
+def remove_weak_correlations(df1: pd.DataFrame, df2, col_to_correlate: str, y, weak_threshold: float = 0.1) -> (pd.DataFrame, pd.DataFrame):
     """
     Removes weak correlations
     :param df: pandas DataFrame to remove columns from.
@@ -222,7 +222,7 @@ def remove_weak_correlations(df1: pd.DataFrame, df2, y, weak_threshold: float = 
     :param weak_threshold: float number that counts as an absolute weak threshold
     :return: pandas DataFrame without the columns weakly correlated to target
     """
-    col_to_correlate = 'PREDICTOR_TO_CHECK_WEAK_CORRS'
+#     col_to_correlate = 'PREDICTOR_TO_CHECK_WEAK_CORRS'
     df1[col_to_correlate] = y
     cols = df1[df1.columns].corr().columns
     corrs = df1[df1.columns].corr()[col_to_correlate]
